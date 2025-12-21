@@ -36,7 +36,7 @@ def escape(s: str) -> str:
     s.replace(")", "\\)")
 
 nav = ["  - Contributions:"]
-for org, data in contributions.items():
+for org, data in sorted(contributions.items()):
     avatar_url = data.get("avatar_url", "")
     profile_url = data.get("profile_url", "")
     prs = data.get("prs", [])
