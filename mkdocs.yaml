@@ -5,6 +5,7 @@ site_author: k7a-tomohiro
 copyright: Copyright &copy; 2025 k7a-tomohiro.
 repo_name: k7a-tomohiro
 repo_url: https://github.com/k7a-tomohiro
+edit_uri: edit/main/website/
 
 docs_dir: "./website"
 strict: false
@@ -19,6 +20,7 @@ extra_javascript:
 exclude_docs: |
   README.md
   .gitignore
+  .gitkeep
   *.drawio
 
 theme:
@@ -49,7 +51,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
-    - navigation.expand
+    # - navigation.expand
     - navigation.path
     - announce.dismiss
     - content.action.edit
@@ -119,11 +121,27 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/k7a-tomohiro
 
+not_in_nav: |
+  index.md
+
 nav:
   - Projects:
       - projects/index.md
   - Blog:
       - blog/index.md
+  - MyLearn:
+      - Container:
+        - learn/container/index.md
+      - Kubernetes:
+        - learn/kubernetes/index.md
+      - Ansible:
+        - learn/ansible/index.md
+      - Terraform:
+        - learn/terraform/index.md
+      - Go:
+        - learn/go/index.md
+      - Rust:
+        - learn/rust/index.md
   #########*#########*#########*#########*#########
   # DO NOT ADD LINES BELOW.
   # AUTO GENERATED NAV COMES BELOW.
