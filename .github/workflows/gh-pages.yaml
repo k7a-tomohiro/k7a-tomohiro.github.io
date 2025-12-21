@@ -1,0 +1,38 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches:
+      - "main"
+
+permissions:
+  contents: write
+  id-token: write
+  pages: write
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+      - run: pip install requests httpx github_oss_contributions
+      - run: python generate_contributions.py
+      - run: pip install mkdocs mkdocs-material mkdocs-material-extensions mkdocs-static-i18n mkdocs-issues-plugin
+      - run: mkdocs build
+      - uses: actions/upload-artifact@v4
+        with:
+          path: "./website/"
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: "./site"
+      - uses: actions/deploy-pages@v4
+        id: deployment

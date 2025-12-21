@@ -1,0 +1,129 @@
+site_name: k7a-tomohiro
+site_url: https://k7a-tomohiro.github.io/
+site_description: k7a-tomohiro's personal website.
+site_author: k7a-tomohiro
+copyright: Copyright &copy; 2025 k7a-tomohiro.
+repo_name: k7a-tomohiro
+repo_url: https://github.com/k7a-tomohiro
+
+docs_dir: "./website"
+strict: false
+
+extra_css:
+  - ./mkdocs.css
+extra_javascript:
+  - ./mkdocs.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+exclude_docs: |
+  README.md
+  .gitignore
+  *.drawio
+
+theme:
+  name: material
+  locale: en
+  highlightjs: true
+  # logo: static/logo.svg
+  # favicon: static/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - search.highlight
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.expand
+    - navigation.path
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - toc.follow
+
+plugins:
+  - search
+  - tags
+  - blog
+  # - i18n:
+  #     languages:
+  #       - locale: en
+  #         name: "English"
+  #         default: true
+  #       - locale: ja
+  #         name: "日本語"
+  - mkdocs-issues-plugin:
+      log_level: "INFO"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
+      configs:
+        - service: 'github'
+          base_url: 'https://github.com'
+          api_url: 'https://api.github.com'
+          token: $GITHUB_TOKEN
+
+markdown_extensions:
+  - attr_list
+  - smarty
+  - admonition
+  - meta
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: "./website"
+      check_paths: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/k7a-tomohiro
+
+nav:
+  - Projects:
+      - projects/index.md
+  - Blog:
+      - blog/index.md
+  #########*#########*#########*#########*#########
+  # DO NOT ADD LINES BELOW.
+  # AUTO GENERATED NAV COMES BELOW.
