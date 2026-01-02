@@ -11,11 +11,11 @@ docs_dir: "./website"
 strict: false
 
 extra_css:
-  - ./mkdocs.css
+  - ./_customize/mkdocs.css
 extra_javascript:
-  - ./mkdocs.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - ./_customize/mathjax.js
+  - ./_customize/mermaid.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 exclude_docs: |
   README.md
@@ -27,8 +27,8 @@ theme:
   name: material
   locale: en
   highlightjs: true
-  # logo: static/logo.svg
-  # favicon: static/logo.svg
+  logo: static/icon.png
+  favicon: static/icon.png
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -65,15 +65,8 @@ plugins:
   - search
   - tags
   - blog
-  # - i18n:
-  #     languages:
-  #       - locale: en
-  #         name: "English"
-  #         default: true
-  #       - locale: ja
-  #         name: "日本語"
   - mkdocs-issues-plugin:
-      log_level: "INFO"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
+      log_level: "INFO"
       configs:
         - service: 'github'
           base_url: 'https://github.com'
@@ -81,48 +74,53 @@ plugins:
           token: $GITHUB_TOKEN
 
 markdown_extensions:
+  - abbr
   - attr_list
+  - def_list
+  - footnotes
+  - tables
   - smarty
   - admonition
   - meta
+  - md_in_html
   - toc:
       permalink: true
-      permalink_title: Anchor link to this section for reference
-  - tables
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
+      title: Table of Contents
+  - pymdownx.tasklist
   - pymdownx.emoji
   - pymdownx.details
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets:
-      base_path: "./website"
-      check_paths: true
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.blocks.caption
+  - pymdownx.keys
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
       smart_enable: all
+  - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      base_path: "./website"
+      check_paths: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.arithmatex:
-      generic: true
 
 extra:
+  generator: true
+  analytics:
+    provider: google
+    property: G-XDXFERZ4Z0
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/k7a-tomohiro
-
-not_in_nav: |
-  index.md
 
 nav:
   - Projects:

@@ -1,45 +1,50 @@
-.md-tabs__link {
-  font-size: 1rem;
-  font-weight: 700;
+.md-grid {
+  max-width: none;
 }
 
-.md-sidebar {
-  width: 9rem;
+.md-tabs__link {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.md-sidebar--primary {
+  width: 12rem;
 }
 
 .md-sidebar--primary .md-nav {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
+}
+
+.md-sidebar--secondary {
+  width: 10rem;
 }
 
 .md-sidebar--secondary .md-nav {
   font-size: 0.65rem;
 }
 
-h2 {
-  padding: 0.2em 0.5em;
-  color: #00196e;
+.md-typeset h2 {
   background: #ebf1ff;
   border-left: solid 5px #00196e;
+  color: #00196e;
+  font-weight: 700;
+  padding: 0.2em 0.5em;
 }
 
-[data-md-color-scheme="slate"] h2 {
+[data-md-color-scheme="slate"] .md-typeset h2 {
   background: #00196e;
-  color: #ebf1ff;
-  border-left: solid 5px #ebf1ff;
+  border-left: solid 5px #cccccc;
+  color: #cccccc;
 }
 
-h3 {
+.md-typeset h3 {
   color: #00196e;
   border-bottom: solid 1px #00196e;
 }
 
-[data-md-color-scheme="slate"] h3 {
-  color: #ebf1ff;
-  border-bottom: solid 1px #ebf1ff;
-}
-
-.md-typeset h2 {
-  font-weight: 700;
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: #cccccc;
+  border-bottom: solid 1px #cccccc;
 }
 
 :root {
