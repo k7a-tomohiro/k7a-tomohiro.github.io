@@ -1,0 +1,16 @@
+FROM debian:stable-slim
+
+RUN apt update \
+    && apt install -y openssh-server openssh-client python3 \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN echo 'root:password' | chpasswd
+RUN sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
+
+COPY --chmod=0755 entrypoint.sh entrypoint.sh
+
+EXPOSE 2222
+EXPOSE 8000
+CMD ["./entrypoint.sh"]

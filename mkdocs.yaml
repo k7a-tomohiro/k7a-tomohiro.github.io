@@ -123,23 +123,26 @@ extra:
       link: https://github.com/k7a-tomohiro
 
 nav:
+  - Profile:
+      - index.md
   - Projects:
       - projects/index.md
   - Blog:
       - blog/index.md
-  - MyLearn:
+  - Learn:
       - Container:
-        - learn/container/index.md
-      - Kubernetes:
-        - learn/kubernetes/index.md
-      - Ansible:
-        - learn/ansible/index.md
-      - Terraform:
-        - learn/terraform/index.md
-      - Go:
-        - learn/go/index.md
-      - Rust:
-        - learn/rust/index.md
+        - 'SSH Connect': learn/container/ssh/index.md
+        - 'Terminal from Web': learn/container/tty/index.md
+      # - Kubernetes:
+      #   - learn/kubernetes/index.md
+      # - Ansible:
+      #   - learn/ansible/index.md
+      # - Terraform:
+      #   - learn/terraform/index.md
+      # - Go:
+      #   - learn/go/index.md
+      # - Rust:
+      #   - learn/rust/index.md
   #########*#########*#########*#########*#########
   # DO NOT ADD LINES BELOW.
   # AUTO GENERATED NAV COMES BELOW.

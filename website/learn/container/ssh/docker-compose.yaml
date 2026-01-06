@@ -1,0 +1,7 @@
+services:
+  server:
+    image: ssh
+    ports:
+      - "2222:2222"
+      - "8000:8000"
+
