@@ -11,10 +11,12 @@ docs_dir: "./website"
 strict: false
 
 extra_css:
-  - ./_customize/mkdocs.css
+  - _customize/mkdocs.css
+  - _customize/asciinema-player.css
 extra_javascript:
-  - ./_customize/mathjax.js
-  - ./_customize/mermaid.js
+  - _customize/mathjax.js
+  - _customize/mermaid.js
+  - _customize/asciinema-player.min.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 exclude_docs: |
@@ -27,8 +29,8 @@ theme:
   name: material
   locale: en
   highlightjs: true
-  logo: static/icon.png
-  favicon: static/icon.png
+  logo: _customize/icon.png
+  favicon: _customize/icon.png
   icon:
     repo: fontawesome/brands/github
   palette:

@@ -1,3 +1,3 @@
 # About myself
 
-![icon.png](./static/icon.png)
+![icon.png](./_customize/icon.png)
